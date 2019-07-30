@@ -103,7 +103,7 @@ class CountryTransformer(BaseEstimator, TransformerMixin):
         return self
 
     def transform(self, X):
-        return pd.DataFrame({"country": X.country.map(self.countries)})
+        return pd.DataFrame({"country": X.country.map(self.countries)}).fillna('Other')
 
 
 class CountryFullTransformer(BaseEstimator, TransformerMixin):

@@ -1,3 +1,4 @@
+conda activate testing
 # Testing for Data Scientists
 
 ## Packages to install
