@@ -18,7 +18,7 @@ class CategoriesExtractor(BaseEstimator, TransformerMixin):
 
     @classmethod
     def extract_categories(cls, json_string, validate=True):
-        categories = json.loads(json_string).get("slug", "/").split("/")
+        categories = json.loads(json_string).get("slug", "/").split("/", maxsplit=1)
 
         # Validate categories to keep only
         # the most common ones

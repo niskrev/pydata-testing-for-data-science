@@ -18,5 +18,5 @@ def test_goal_adjustor(sample_df):
 
 
     # example of invariant: raises the question of where should validation be
-    #expected_df = pd.DataFrame({'adjusted_goal': sample_df["goal"] * sample_df["static_usd_rate"]})
-    #assert (expected_df["adjusted_goal"] >= 0).all()
+    expected_df = pd.DataFrame({'adjusted_goal': sample_df["goal"] * sample_df["static_usd_rate"]})
+    assert (expected_df["adjusted_goal"] >= 0).all()

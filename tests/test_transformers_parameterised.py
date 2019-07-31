@@ -6,6 +6,7 @@ from src.transformers import GoalAdjustor
 
 test_goal_transformer_testdata = [
     (pd.DataFrame({'goal': [5], 'static_usd_rate': [2]}), pd.DataFrame({'adjusted_goal': [10]})),
+    (pd.DataFrame({'goal': [15], 'static_usd_rate': [2]}), pd.DataFrame({'adjusted_goal': [30]})),
     (pd.DataFrame({'goal': [0], 'static_usd_rate': [1]}), pd.DataFrame({'adjusted_goal': [0]})),
     (pd.DataFrame({'goal': [0], 'static_usd_rate': [1]}), pd.DataFrame({'adjusted_goal': [0]})),
 ]

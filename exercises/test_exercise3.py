@@ -10,8 +10,15 @@ def test_correct_country_returned_with_simple_df():
     Refactor this unit test to apply the Given/When/Then pattern
     :return:
     """
+
+    # Given
     df = pd.DataFrame({'country': ["CA", "GB"]})
+
+    # When
     country_transformer = CountryTransformer()
-    assert len(country_transformer.transform(df).index) ==  2
-    assert country_transformer.transform(df)["country"][0] == "Canada"
-    assert country_transformer.transform(df)["country"][1] == "UK & Ireland"
+    result_df = country_transformer.transform(df)
+
+    # Then
+    assert len(result_df.index) == 2
+    assert result_df.iloc[0]['country'] == 'Canada'
+    assert result_df.iloc[1]['country'] == 'UK & Ireland'
